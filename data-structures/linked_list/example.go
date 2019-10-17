@@ -85,3 +85,36 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 
 	return pre.Next
 }
+
+// leetcode 19
+// remove linked list node
+func removeNthFromEnd(head *ListNode, n int) *ListNode {
+	pre := &ListNode{Val: 0}
+	pre.Next = head
+	first := pre
+	second := pre
+	for i := 1; i <= n+1; i++ {
+		first = first.Next
+	}
+
+	for first != nil {
+		first = first.Next
+		second = second.Next
+	}
+	second.Next = second.Next.Next
+
+	return pre.Next
+}
+
+// leetcode 876
+// look for linked list middle node
+func middleNode(head *ListNode) *ListNode {
+	first := head
+	second := head
+	for second != nil && second.Next != nil {
+		first = first.Next
+		second = second.Next.Next
+	}
+
+	return first
+}
