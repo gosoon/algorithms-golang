@@ -17,4 +17,10 @@ func TestStack(t *testing.T) {
 		fmt.Println(v)
 	}
 	s.Print("")
+
+	if found := s.Search(3); found {
+		fmt.Println("found")
+	} else {
+		fmt.Println("not found")
+	}
 }

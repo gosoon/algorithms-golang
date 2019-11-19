@@ -56,6 +56,16 @@ func (s *ArrayStack) IsEmpty() bool {
 	return false
 }
 
+// Search is find a val in stack
+func (s *ArrayStack) Search(v interface{}) bool {
+	for i := 0; i <= s.top; i++ {
+		if s.data[i] == v {
+			return true
+		}
+	}
+	return false
+}
+
 // Print is print all data int stack
 func (s *ArrayStack) Print(info string) {
 	fmt.Println(info)
